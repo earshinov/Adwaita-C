@@ -88,10 +88,11 @@
 }
 
 .tooltip {
-    padding: 4 4;
+    padding: 4 6;
     border-style: none;
     background-color: @theme_tooltip_bg_color;
     color: @theme_tooltip_fg_color;
+    border-radius: 4;
 }
 
 .grip {
@@ -99,13 +100,13 @@
 }
 
 .pane-separator {
-    background-color: @theme_bg_color;
+    background-color: shade (@theme_bg_color, 0.95);
     color: shade (@inactive_frame_color, 0.80);
 }
 
 .pane-separator:prelight,
 .pane-separator:selected {
-    background-color: @theme_bg_color;
+    background-color: shade (@theme_bg_color, 0.55);
     border-color: shade (@highlighted_border, 0.964);
 }
 
@@ -519,17 +520,16 @@ GtkComboBox .button:prelight {
 /* this controls the general appearance of the menubar */
 .menubar {
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (@theme_bg_color),
-				     color-stop (0.45, shade (@theme_bg_color, 0.97)),
-				     to (shade (@theme_bg_color, 0.99)));
+                                     left top, left bottom,
+                                     from (#f4f4f4),
+                                     to (#dfdfdf);
     border-width: 0;
     border-style: none;
     padding: 4;
     color: @theme_text_color;
 
     -GtkWidget-window-dragging: true;
-    -GtkMenuBar-internal-padding: 0;
+    -GtkMenuBar-internal-padding: 2;
 }
 
 /* remove the image from the prelight areas */
@@ -551,18 +551,21 @@ GtkComboBox .button:prelight {
 
 .menu {
     padding: 2;
-
-    background-color: @theme_base_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#ffffff),
+                                     to (#eeeeee);
 
     border-style: solid;
     border-width: 1;
-    border-radius: 0;
+    border-radius: 2;
     border-color: @inactive_frame_color;
 
     -GtkMenuItem-arrow-scaling: 0.4;
 }
 
 .menuitem {
+    padding: 3;
     -adwaita-menuitem-arrow-color: @menu_controls_color;
 }
 
@@ -577,12 +580,16 @@ GtkComboBox .button:prelight {
 
 .menuitem:active,
 .menuitem:prelight {
-    background-color: @theme_selected_bg_color;
-    color: @theme_selected_fg_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#afd1f4),
+                                     to (#377fcb);
+
+    color: #ffffff;
     border-style: solid;
     border-width: 1;
     border-radius: 1;
-    border-color: darker (@theme_selected_bg_color);
+    border-color: #377fcb;
 }
 
 .menu.separator {
@@ -1157,52 +1164,68 @@ PanelApplet > GtkMenuBar.menubar,
 PanelAppletFrame,
 PanelMenuBar.menubar,
 PanelToplevel {
-    background-color: @os_chrome_bg_color;
-    background-image: none;
+    background-color: #f3f3f3;
     color: @os_chrome_fg_color;
+    border-color: #333333;
+    border-width: 1;
+    padding: 2;
 }
 
 ClockBox,
 .gnome-panel-menu-bar {
     font: bold;
+    padding: 10px;
 }
+PanelApplet > GtkMenuBar { padding: 10px; }
 
 PanelApplet > GtkMenuBar.menubar.menuitem:prelight,
 .gnome-panel-menu-bar.menuitem:prelight {
-    background-color: @os_chrome_selected_bg_color;
+    background-color: #000000;
     color: @os_chrome_selected_fg_color;
     border-color: lighter (@os_chrome_selected_bg_color);
 }
 
-/* panel buttons (clock, tasklist etc) */
+/* panel buttons (clock, tasklist etc)
+ * Пункты панели
+ */
 PanelApplet GtkToggleButton {
-    background-color: @os_chrome_bg_color;
-    background-image: none;
-    border-color: @os_chrome_bg_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#fbfbfb),
+                                     to (#bbbbbb);
+    border-color: #e5e5e5;
     border-width: 1;
     color: @os_chrome_fg_color;
 }
 
+/* Выделенный пункт панели */
 PanelApplet GtkToggleButton:prelight:active,
 PanelApplet GtkToggleButton:active {
-    background-color: @os_chrome_selected_bg_color;
-    background-image: none;
-    border-color: lighter (@os_chrome_selected_bg_color);
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#afd1f4),
+                                     to (#377fcb);
+    border-color: #377fcb;
     border-width: 1;
     color: @os_chrome_selected_fg_color;
 }
 
+/* Наведенный пункт панели */
 PanelApplet GtkToggleButton:prelight {
-    background-color: @os_chrome_bg_color;
-    background-image: none;
-    border-color: @os_chrome_bg_color;
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (#ffffff),
+                                     to (#cfcfcf);
+    border-color: #cfcfcf;
     border-width: 1;
     color: @os_chrome_selected_fg_color;
 }
 
+/* Иконки трея */
 NaTrayApplet {
-    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-padding: 4; /* меняем расстояние между иконками */
     -NaTrayApplet-icon-size: 16;
+    color: @os_chrome_fg_color;
 }
 
 WnckPager, WnckTasklist {

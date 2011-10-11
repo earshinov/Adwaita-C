@@ -1,6 +1,6 @@
 /* Default color scheme */
 @define-color base_color #ffffff;
-@define-color bg_color #ededed;
+@define-color bg_color #f5f5f5;
 @define-color tooltip_bg_color #343434;
 @define-color selected_bg_color #4a90d9;
 @define-color text_color #2e3436;
@@ -37,10 +37,10 @@
 @define-color keyboard_focus_border_a #a2c9f1;
 @define-color keyboard_focus_border_b #6794cf;
 
-@define-color os_chrome_bg_color black;
-@define-color os_chrome_fg_color #ccc;
-@define-color os_chrome_selected_bg_color #333;
-@define-color os_chrome_selected_fg_color white;
+@define-color os_chrome_bg_color #333333;
+@define-color os_chrome_fg_color #222222;
+@define-color os_chrome_selected_bg_color #e5e5e5;
+@define-color os_chrome_selected_fg_color #111111;
 
 @define-color chrome_bg_color #1e1a17;
 @define-color chrome_fg_color #fff;
