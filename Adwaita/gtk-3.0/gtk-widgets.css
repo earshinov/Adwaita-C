@@ -705,8 +705,10 @@ GtkTreeMenu .menuitem * {
 .menu {
     background-color: @menu_bg_color;
     color: @menu_fg_color;
-    padding: 0;
-    border-style: none;
+
+    border-width: 1;
+    border-style: solid;
+    border-color: @menu_border;
 }
 
 .menu.button {
@@ -801,6 +803,7 @@ GtkTreeMenu .menuitem * {
 
 .menuitem.separator {
     color: @menu_separator;
+    padding: 2;
 
     -GtkSeparatorMenuItem-horizontal-padding: 0;
 }
