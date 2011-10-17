@@ -1601,7 +1601,7 @@ PanelApplet GtkToggleButton {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (#fbfbfb),
-                                     to (#bbbbbb);
+                                     to (#bbbbbb));
     border-color: #e5e5e5;
     border-width: 1;
     color: @os_chrome_fg_color;
@@ -1613,7 +1613,7 @@ PanelApplet GtkToggleButton:active {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (#afd1f4),
-                                     to (#377fcb);
+                                     to (#377fcb));
     border-color: #377fcb;
     border-width: 1;
     color: @os_chrome_selected_fg_color;
@@ -1624,7 +1624,7 @@ PanelApplet GtkToggleButton:prelight {
     background-image: -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (#ffffff),
-                                     to (#cfcfcf);
+                                     to (#cfcfcf));
     border-color: #cfcfcf;
     border-width: 1;
     color: @os_chrome_selected_fg_color;
