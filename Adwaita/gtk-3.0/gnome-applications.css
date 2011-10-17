@@ -111,3 +111,13 @@ NautilusWindow > GtkTable > .pane-separator {
     border-style: solid;
     border-color: shade (@theme_bg_color, 0.66);
 }
+
+#nautilus-tab-close-button
+{
+    -GtkButton-default-border: 0;
+    -GtkButton-default-outside-border: 0;
+    -GtkButton-inner-border: 0;
+    -GtkWidget-focus-line-width: 0;
+    -GtkWidget-focus-padding: 0;
+    padding: 0;
+}
