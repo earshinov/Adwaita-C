@@ -1577,7 +1577,8 @@ PanelApplet > GtkMenuBar.menubar,
 PanelAppletFrame,
 PanelMenuBar.menubar,
 PanelToplevel {
-    background-color: #f3f3f3;
+    background-color: @os_chrome_bg_color;
+    background-image: none;
     color: @os_chrome_fg_color;
 }
 
@@ -1588,7 +1589,7 @@ ClockBox,
 
 PanelApplet > GtkMenuBar.menubar.menuitem:prelight,
 .gnome-panel-menu-bar.menuitem:prelight {
-    background-color: #000000;
+    background-color: @os_chrome_selected_bg_color;
     color: @os_chrome_selected_fg_color;
     border-color: lighter (@os_chrome_selected_bg_color);
 }
