@@ -1038,7 +1038,7 @@ GtkTreeMenu .menuitem * {
 .toolbar .raised.button {
     border-width: 1;
     border-style: none;
-    padding: 3;
+    padding: 0 5;
 
     background-image: -gtk-gradient (linear,
 				     left top, left bottom,
@@ -1123,6 +1123,14 @@ GtkTreeMenu .menuitem * {
 .toolbar .raised.linked:nth-child(last) .button,
 .toolbar .raised.linked:nth-child(last) .button:active {
     border-width: 1 1 1 0;
+}
+
+.toolbar .button {
+    -GtkButton-default-border: 0;
+    -GtkButton-default-outside-border: 0;
+    -GtkButton-inner-border: 0;
+    -GtkWidget-focus-line-width: 0;
+    -GtkWidget-focus-padding: 0;
 }
 
 GtkPathBar .button {
