@@ -414,7 +414,7 @@ GtkScrolledWindow.frame {
     /* border-image in -assets variant */
 
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
+                                     left top, left bottom,
                                      from (@button_gradient_color_a),
                                      to (@button_gradient_color_b));
 }
@@ -422,9 +422,9 @@ GtkScrolledWindow.frame {
 .button:hover,
 .toolbar .button:hover {
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (@button_hover_gradient_color_a),
-				     to (@button_hover_gradient_color_b));
+                                     left top, left bottom,
+                                     from (@button_hover_gradient_color_a),
+                                     to (@button_hover_gradient_color_b));
 }
 
 .button:active,
@@ -432,9 +432,9 @@ GtkScrolledWindow.frame {
 .button:hover:active,
 .toolbar .button:hover:active {
     background-image: -gtk-gradient (linear,
-    				     left top, left bottom,
+                                     left top, left bottom,
                                      from (@button_active_gradient_color_a),
-				     to (alpha (@button_active_gradient_color_b, 0.13)));
+                                     to (alpha (@button_active_gradient_color_b, 0.13)));
 }
 
 .button:insensitive {
@@ -923,12 +923,12 @@ GtkTreeMenu .menuitem * {
 .primary-toolbar .toolbar,
 .primary-toolbar.toolbar {
     background-image: -gtk-gradient (linear,
-				     left top,
-				     left bottom,
-				     from (@toolbar_gradient_base),
-				     color-stop (0.16, @toolbar_gradient_step1),
-				     color-stop (0.90, @toolbar_gradient_step2),
-				     to (@toolbar_gradient_final));
+                                     left top,
+                                     left bottom,
+                                     from (@toolbar_gradient_base),
+                                     color-stop (0.16, @toolbar_gradient_step1),
+                                     color-stop (0.90, @toolbar_gradient_step2),
+                                     to (@toolbar_gradient_final));
 
     border-width: 1 0 1 0;
     border-radius: 0;
@@ -985,10 +985,10 @@ GtkTreeMenu .menuitem * {
 .primary-toolbar .toolbar .button:hover,
 .primary-toolbar.toolbar .button:hover {
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (alpha (@theme_base_color, 0.0)),
-				     color-stop (0.54, alpha (shade (@theme_base_color, 0.92), 0.49)),
-			             to (alpha (@theme_base_color, 0.0)));
+                                     left top, left bottom,
+                                     from (alpha (@theme_base_color, 0.0)),
+                                     color-stop (0.54, alpha (shade (@theme_base_color, 0.92), 0.49)),
+                                     to (alpha (@theme_base_color, 0.0)));
 }
 
 .primary-toolbar .toolbar .button:active,
@@ -998,9 +998,9 @@ GtkTreeMenu .menuitem * {
     /* border-image defined in the -assets variant */
 
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (shade (@toolbar_gradient_base, 0.95)),
-			             to (alpha (shade (@toolbar_gradient_base, 0.85), 0.0)));
+                                     left top, left bottom,
+                                     from (shade (@toolbar_gradient_base, 0.95)),
+                                     to (alpha (shade (@toolbar_gradient_base, 0.85), 0.0)));
 }
 
 .primary-toolbar .toolbar .button *:active,
@@ -1011,9 +1011,9 @@ GtkTreeMenu .menuitem * {
 .primary-toolbar .toolbar .button:active:hover,
 .primary-toolbar.toolbar .button:active:hover {
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (alpha (shade (@toolbar_gradient_base, 0.96), 0.7)),
-			             to (alpha (shade (@toolbar_gradient_base, 1.14), 0.0)));
+                                     left top, left bottom,
+                                     from (alpha (shade (@toolbar_gradient_base, 0.96), 0.7)),
+                                     to (alpha (shade (@toolbar_gradient_base, 1.14), 0.0)));
 }
 
 .primary-toolbar .toolbar .button *:active:hover,
@@ -1044,7 +1044,7 @@ GtkTreeMenu .menuitem * {
     padding: 0 5;
 
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
+                                     left top, left bottom,
                                      from (@button_raised_gradient_color_a),
                                      to (@button_raised_gradient_color_b));
 
@@ -1059,9 +1059,9 @@ GtkTreeMenu .menuitem * {
 .toolbar .raised .button:hover,
 .toolbar .raised.button:hover {
     background-image: -gtk-gradient (linear,
-				     left top, left bottom,
-				     from (@button_hover_gradient_color_a),
-				     to (@button_hover_gradient_color_b));
+                                     left top, left bottom,
+                                     from (@button_hover_gradient_color_a),
+                                     to (@button_hover_gradient_color_b));
 }
 
 .toolbar .raised .button:active,
@@ -1069,9 +1069,9 @@ GtkTreeMenu .menuitem * {
 .toolbar .raised.button:hover:active,
 .toolbar .raised.button:active {
     background-image: -gtk-gradient (linear,
-    				     left top, left bottom,
+                                     left top, left bottom,
                                      from (@button_raised_active_gradient_color_a),
-				     to (@button_raised_active_gradient_color_b));
+                                     to (@button_raised_active_gradient_color_b));
     background-color: @theme_base_color;
 }
 
@@ -1208,14 +1208,14 @@ GtkPathBar .button:active:hover:nth-child(last) {
     padding: 4;
 
     background-image: -gtk-gradient (linear,
-				     left top,
-				     left bottom,
-				     from (@toolbar_gradient_base),
-				     color-stop (0.16, @toolbar_gradient_step1),
-				     color-stop (0.90, @toolbar_gradient_step2),
-				     color-stop (0.98, @toolbar_gradient_final),
+                                     left top,
+                                     left bottom,
+                                     from (@toolbar_gradient_base),
+                                     color-stop (0.16, @toolbar_gradient_step1),
+                                     color-stop (0.90, @toolbar_gradient_step2),
+                                     color-stop (0.98, @toolbar_gradient_final),
                                      color-stop (0.99, shade (@theme_bg_color, 0.83)),
-				     to (shade (@theme_bg_color, 0.83)));
+                                     to (shade (@theme_bg_color, 0.83)));
 }
 
 .inline-toolbar.toolbar:nth-child(last) {
