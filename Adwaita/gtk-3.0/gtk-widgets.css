@@ -3,7 +3,7 @@
     padding: 1;
 
     /* Style properties */
-    -GtkToolButton-icon-spacing: 4;
+    -GtkToolButton-icon-spacing: 0;
 
     -GtkTextView-error-underline-color: @error_color;
 
@@ -80,11 +80,10 @@ GtkWindow {
 }
 
 .tooltip {
-    padding: 4 6;
+    padding: 4 4;
     border-style: none;
     background-color: @theme_tooltip_bg_color;
     color: @theme_tooltip_fg_color;
-    border-radius: 4;
 }
 
 .tooltip * {
@@ -402,7 +401,7 @@ GtkScrolledWindow.frame {
 
     -GtkButton-child-displacement-x: 1;
     -GtkButton-child-displacement-y: 1;
-    -GtkButton-image-spacing: 4;
+    -GtkButton-image-spacing: -2;
     -GtkButton-interior-focus: true;
     -GtkButton-default-border: 0;
     -GtkButton-inner-border: 0;
@@ -747,7 +746,7 @@ GtkTreeMenu .menuitem * {
     padding: 4;
 
     -GtkWidget-window-dragging: true;
-    -GtkMenuBar-internal-padding: 2;
+    -GtkMenuBar-internal-padding: 0;
 }
 
 .menubar .menuitem {
@@ -891,10 +890,6 @@ GtkTreeMenu .menuitem * {
     border-color: darker (@theme_bg_color);
     border-width: 1 0 1 0;
     padding: 4;
-}
-
-.toolbar .button {
-    padding: 2;
 }
 
 .toolbar:insensitive {
@@ -1584,17 +1579,12 @@ PanelMenuBar.menubar,
 PanelToplevel {
     background-color: #f3f3f3;
     color: @os_chrome_fg_color;
-    border-color: #333333;
-    border-width: 1;
-    padding: 2;
 }
 
 ClockBox,
 .gnome-panel-menu-bar {
     font: bold;
-    padding: 10px;
 }
-PanelApplet > GtkMenuBar { padding: 10px; }
 
 PanelApplet > GtkMenuBar.menubar.menuitem:prelight,
 .gnome-panel-menu-bar.menuitem:prelight {
@@ -1643,7 +1633,6 @@ PanelApplet GtkToggleButton:prelight {
 NaTrayApplet {
     -NaTrayApplet-icon-padding: 4; /* меняем расстояние между иконками */
     -NaTrayApplet-icon-size: 16;
-    color: @os_chrome_fg_color;
 }
 
 WnckPager, WnckTasklist {
