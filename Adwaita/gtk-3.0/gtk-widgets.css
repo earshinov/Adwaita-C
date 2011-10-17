@@ -754,7 +754,7 @@ GtkTreeMenu .menuitem * {
 .menubar .menuitem {
     border-width: 0;
     border-style: none;
-    padding: 3 5;
+    padding: 4 5 2;
 }
 
 /* remove the image from the prelight areas */
