@@ -1581,13 +1581,11 @@ GtkCalendar.highlight {
  * Fallback Mode Panel
  **********************/
 
-PanelWidget,
-PanelApplet,
-PanelApplet > GtkMenuBar.menubar,
 .gnome-panel-menu-bar,
+PanelToplevel,
+PanelWidget,
 PanelAppletFrame,
-PanelMenuBar.menubar,
-PanelToplevel {
+PanelApplet {
     background-color: @os_chrome_bg_color;
     background-image: none;
     color: @os_chrome_fg_color;
@@ -1597,11 +1595,9 @@ PanelToplevel {
     font: bold;
 }
 
-PanelApplet > GtkMenuBar.menubar.menuitem:prelight,
-.gnome-panel-menu-bar.menuitem:prelight {
+.gnome-panel-menu-bar .menuitem:prelight {
     background-color: @os_chrome_selected_bg_color;
     color: @os_chrome_selected_fg_color;
-    border-color: lighter (@os_chrome_selected_bg_color);
 }
 
 /* panel buttons (clock, tasklist etc) */
