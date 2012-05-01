@@ -77,15 +77,15 @@ style "default" {
 	base[ACTIVE]      = shade (0.9, @selected_bg_color)
 
 	engine "clearlooks" {
-		style = CLASSIC
 		colorize_scrollbar = FALSE
-		animation = FALSE
-
 		reliefstyle = 0
+
 		menubarstyle = 2
 		toolbarstyle = 0
+		animation = FALSE
 
 		radius = 3.0
+		style = CLASSIC
 
 		# Set a hint to disable backward compatibility fallbacks.
 		hint = "use-hints"
@@ -168,6 +168,7 @@ style "vscrollbar" {
 }
 
 style "notebook_bg" {
+
 	bg[NORMAL]        = shade (1.02, @bg_color)
 }
 
