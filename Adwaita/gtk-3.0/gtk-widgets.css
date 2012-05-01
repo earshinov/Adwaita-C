@@ -756,13 +756,6 @@ GtkComboBox.combobox-entry .button {
     text-shadow: @primary_toolbar_button_text_shadow 0 1;
 }
 
-.primary-toolbar .button *:active,
-.inline-toolbar .button *:active,
-.button *:active {
-    color: @button_active_text;
-    text-shadow: @button_active_text_shadow 0 1;
-}
-
 .button *:insensitive,
 .button *:active:insensitive {
     color: @insensitive_fg_color;
@@ -783,14 +776,14 @@ GtkComboBox.combobox-entry .button {
 .toolbar .button.raised *,
 .toolbar .raised .button *,
 .inline-toolbar .button * {
-    icon-shadow: @button_text_shadow 0 1;
+    icon-shadow: none;
     text-shadow: @button_text_shadow 0 1;
 }
 
 .toolbar .button.raised *:active,
 .toolbar .raised .button *:active,
 .inline-toolbar .button *:active {
-    icon-shadow: @button_active_text_shadow 0 1;
+    icon-shadow: none;
     text-shadow: @button_active_text_shadow 0 1;
 }
 
