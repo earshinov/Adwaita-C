@@ -50,9 +50,20 @@ TerminalWindow GtkNotebook.notebook {
     border-radius: 5px;
 }
 
+.nautilus-inactive-pane .view {
+    background-color: @theme_unfocused_base_color;
+}
+
+.nautilus-inactive-pane .view:selected,
 .nautilus-inactive-pane .nautilus-canvas-item:selected {
     background-color: @theme_unfocused_selected_bg_color;
     color: @theme_unfocused_selected_fg_color;
+}
+
+.nautilus-inactive-pane .expander.view:selected {
+    background-color: @theme_unfocused_selected_bg_color;
+    color: @internal_element_color;
+    border-color: @internal_element_color;
 }
 
 .nautilus-desktop.nautilus-canvas-item {
@@ -613,9 +624,9 @@ EphyToolbar.toolbar .button {
 
 /* Border on the right in the left menu toolbar */
 .contacts-left-toolbar.toolbar.menubar {
- border-width: 0 1px 0 0;
- border-style: solid;
- border-color: @borders;
+ border-image: linear-gradient(to bottom, @bg_color, shade(@borders,1.2));
+ border-image-width: 0 1px 0 0;
+ border-image-slice: 1;
 }
 
 /* Sidebar with line at top and the left */
