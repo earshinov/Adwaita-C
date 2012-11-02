@@ -10,19 +10,19 @@ GtkIconView.view.cell:selected:focus {
     /* FIXME: this probably needs to be better;
      * see https://bugzilla.gnome.org/show_bug.cgi?id=644157
      */
-    -adwaita-focus-border-color: alpha(@theme_text_color, 0.4);
-    -adwaita-focus-border-radius: 5;
-    -adwaita-focus-border-dashes: true;
+    outline-color: alpha(@theme_text_color, 0.4);
+    outline-style: dashed;
+    outline-offset: 5px;
 }
 
 .button,
 GtkComboBox {
-    text-shadow: @button_text_shadow 0 -1;
+    text-shadow: 0 -1px @button_text_shadow;
 }
 
 .button *:active,
 GtkComboBox *:active {
-    text-shadow: @button_active_text_shadow 0 1;
+    text-shadow: 0 1px @button_active_text_shadow;
     color: @theme_selected_bg_color; /* Not sure about this one */
 }
 
@@ -35,24 +35,28 @@ GtkComboBox *:active:insensitive {
 .toolbar .button.raised *,
 .toolbar .raised .button *,
 .inline-toolbar .button * {
-    icon-shadow: @button_text_shadow 0 -1;
+    text-shadow: 0 -1px @button_text_shadow;
+    icon-shadow: 0 -1px @button_text_shadow;
 }
 
 .toolbar .button.raised *:active,
 .toolbar .raised .button *:active,
 .inline-toolbar .button *:active {
-    icon-shadow: @button_active_text_shadow 0 -1;
+    text-shadow: 0 1px @button_active_text_shadow;
+    icon-shadow: 0 1px @button_active_text_shadow;
 }
 
 .toolbar .button.raised *:insensitive,
 .toolbar .raised .button *:insensitive,
 .inline-toolbar .button *:insensitive {
+    text-shadow: none;
     icon-shadow: none;
 }
 
 .toolbar .button.raised *:backdrop,
 .toolbar .raised .button *:backdrop,
 .inline-toolbar .button *:backdrop {
+    text-shadow: none;
     icon-shadow: none;
 }
 
@@ -76,16 +80,19 @@ GtkScale.trough:insensitive:backdrop { /* not working */
 }
 
 GtkSwitch.slider {
-    background-image: -gtk-gradient (linear,
+    background-image: url("assets/switch-slider-grip-dark.svg"),
+                      -gtk-gradient (linear,
                                      left top, left bottom,
                                      from (@theme_bg_color),
                                      to (@switch_slider_color));
 
-    -adwaita-switch-grip-color: shade (@switch_slider_color, 0.9);
+    background-repeat: no-repeat;
+    background-position: center;
+
     border-color: mix (@borders, black, 0.4);
-    box-shadow: 0 -1 inset alpha(white, 0.04), 
-                0 1 inset shade(@theme_bg_color, 1.1),
-                0 2 inset alpha(@borders, 0.2);
+    box-shadow: inset 0 -1px alpha(white, 0.04), 
+                inset 0 1px shade(@theme_bg_color, 1.1),
+                inset 0 2px alpha(@borders, 0.2);
 }
 
 .scrollbar.trough.vertical {
@@ -98,56 +105,65 @@ GtkSwitch.slider {
 
 .primary-toolbar .toolbar,
 .primary-toolbar.toolbar {
-    box-shadow: 0 3 inset alpha(black, 0.05),
-                0 2 inset alpha(black, 0.05),
-                0 1 inset alpha(black, 0.05);
+    box-shadow: inset 0 3px alpha(black, 0.05),
+                inset 0 2px alpha(black, 0.05),
+                inset 0 1px alpha(black, 0.05);
 }
 
 .entry:focus {
-    box-shadow: 2 2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                -2 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                1 1 inset alpha(lighter(@theme_selected_bg_color), 0.7),
-                -1 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+    box-shadow: inset 2px 2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset -2px -2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset 1px 1px alpha(lighter(@theme_selected_bg_color), 0.7),
+                inset -1px -1px alpha(lighter(@theme_selected_bg_color), 0.7);
 }
 
 GtkComboBox.combobox-entry .entry:focus:first-child {
-    box-shadow: 2 2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                -1 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                1 1 inset alpha(lighter(@theme_selected_bg_color), 0.7),
-                0 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+    box-shadow: inset 2px 2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset -1px -2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset 1px 1px alpha(lighter(@theme_selected_bg_color), 0.7),
+                inset 0 -1px alpha(lighter(@theme_selected_bg_color), 0.7);
 }
 
 GtkComboBox.combobox-entry .entry:focus:last-child {
-    box-shadow: 1 2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                -2 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                0 1 inset alpha(lighter(@theme_selected_bg_color), 0.7),
-                -1 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+    box-shadow: inset 1px 2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset -2px -2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset 0 1px alpha(lighter(@theme_selected_bg_color), 0.7),
+                inset -1px -1px alpha(lighter(@theme_selected_bg_color), 0.7);
 }
 
-.spinbutton .button:active,
-.spinbutton .button:active:focus {
-    box-shadow: 1 0 inset @inset_dark_color,
-                0 2 inset alpha(lighter(@theme_selected_bg_color), 0.2),
-                0 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2), 
-                0 1 inset alpha(lighter(@theme_selected_bg_color), 0.7), 
-                0 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+.spinbutton .button:active {
+    box-shadow: inset 1px 0 @inset_dark_color,
+                inset 0 2px alpha(lighter(@theme_selected_bg_color), 0.2),
+                inset 0 -2px alpha(lighter(@theme_selected_bg_color), 0.2), 
+                inset 0 1px alpha(lighter(@theme_selected_bg_color), 0.7), 
+                inset 0 -1px alpha(lighter(@theme_selected_bg_color), 0.7);
 }
 
-.spinbutton .button:first-child:active,
-.spinbutton .button:first-child:active:focus {
-    box-shadow: 2 2 inset alpha(lighter(@theme_selected_bg_color), 0.2), 
-                0 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2), 
-                1 1 inset alpha(lighter(@theme_selected_bg_color), 0.7), 
-                0 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+.spinbutton .button:first-child:active {
+    box-shadow: inset 2px 2px alpha(lighter(@theme_selected_bg_color), 0.2), 
+                inset 0 -2px alpha(lighter(@theme_selected_bg_color), 0.2), 
+                inset 1px 1px alpha(lighter(@theme_selected_bg_color), 0.7), 
+                inset 0 -1px alpha(lighter(@theme_selected_bg_color), 0.7);
 }
 
-.spinbutton .button:last-child:active,
-.spinbutton .button:last-child:active:focus {
-    box-shadow: 1 0 inset @inset_dark_color, 
-                0 2 inset alpha(lighter(@theme_selected_bg_color), 0.2), 
-                -2 -2 inset alpha(lighter(@theme_selected_bg_color), 0.2), 
-                0 1 inset alpha(lighter(@theme_selected_bg_color), 0.7),
-                -1 -1 inset alpha(lighter(@theme_selected_bg_color), 0.7);
+.spinbutton .button:last-child:active {
+    box-shadow: inset 1px 0 @inset_dark_color, 
+                inset 0 2px alpha(lighter(@theme_selected_bg_color), 0.2), 
+                inset -2px -2px alpha(lighter(@theme_selected_bg_color), 0.2), 
+                inset 0 1px alpha(lighter(@theme_selected_bg_color), 0.7),
+                inset -1px -1px alpha(lighter(@theme_selected_bg_color), 0.7);
+}
+
+.spinbutton.vertical .button {
+    icon-shadow: 0 -1px @button_text_shadow;
+}
+
+.spinbutton.vertical .button:active {
+    icon-shadow: 0 1px @button_active_text_shadow;
+}
+
+.spinbutton.vertical .button:backdrop {
+    icon-shadow: none;
 }
 
 GtkColorSwatch,
@@ -157,7 +173,7 @@ GtkColorSwatch:selected:hover,
 GtkColorEditor GtkColorSwatch.color-dark:hover,
 GtkColorEditor GtkColorSwatch.color-light:hover {
     border-color: @borders;
-    box-shadow: 0 2 inset alpha(black, 0.15), 1 1 inset alpha(black, 0.15);
+    box-shadow: inset 0 2px alpha(black, 0.15), inset 1px 1px alpha(black, 0.15);
 }
 
 GtkColorSwatch.color-dark:hover {
