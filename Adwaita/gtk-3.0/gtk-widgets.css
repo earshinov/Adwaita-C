@@ -38,7 +38,7 @@
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 1;
     -GtkWindow-resize-grip-width: 0;
-    -GtkWindow-resize-grip-height: 0;   
+    -GtkWindow-resize-grip-height: 0;
 
     /* We use the outline properties to signal the focus properties
      * to the adwaita engine: using real CSS properties is faster,
@@ -256,8 +256,8 @@ GtkLabel:insensitive {
 }
 
 .floating-bar {
-    background-image: linear-gradient(to bottom, 
-                                      @theme_base_color 20%, 
+    background-image: linear-gradient(to bottom,
+                                      @theme_base_color 20%,
                                       shade(@theme_base_color, 0.9)
                                       );
     background-color: @theme_base_color;
@@ -416,7 +416,7 @@ GtkTreeView.separator:backdrop,
 .entry:focus {
     box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
                 inset 1px 1px alpha(@theme_selected_bg_color, 0.1),
-                inset -1px -1px alpha(@theme_selected_bg_color, 0.2); 
+                inset -1px -1px alpha(@theme_selected_bg_color, 0.2);
     transition: all 200ms ease-in;
 }
 
@@ -427,7 +427,7 @@ GtkTreeView.separator:backdrop,
     border-image: none;
     border-style: none;
     background-color: transparent;
-    background-image: linear-gradient(to top, 
+    background-image: linear-gradient(to top,
                                       transparent 2px,
                                       white 2px,
                                       white 3px,
@@ -440,7 +440,7 @@ GtkTreeView.separator:backdrop,
 
 .entry.progressbar.pulse,
 .entry.progressbar.pulse:focus {
-    background-image: linear-gradient(to top, 
+    background-image: linear-gradient(to top,
                                       transparent 2px,
                                       white 2px,
                                       white 3px,
@@ -455,7 +455,7 @@ GtkTreeView.separator:backdrop,
     border-image: none;
     border-style: none;
     background-color: transparent;
-    background-image: linear-gradient(to top, 
+    background-image: linear-gradient(to top,
                                       transparent 2px,
                                       white 2px,
                                       white 3px,
@@ -641,14 +641,14 @@ GtkTreeView.separator:backdrop,
 .spinbutton.vertical .button:first-child {
     border-image-width: 3px 3px 0 3px;
     border-width: 1px 1px 0 1px;
-    border-bottom-left-radius: 0; 
+    border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .spinbutton.vertical .button:last-child {
     border-image-width: 0 3px 4px 3px;
     border-width: 0 1px 2px 1px;
-    border-top-left-radius: 0; 
+    border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
@@ -658,9 +658,9 @@ GtkTreeView.separator:backdrop,
     border-width: 0 1px;
     border-style: solid;
     border-radius: 0;
-    box-shadow: inset 0 2px @entry_inset, 
+    box-shadow: inset 0 2px @entry_inset,
                 inset 0 3px alpha(@entry_inset, 0.4),
-                inset 0 1px @borders, 
+                inset 0 1px @borders,
                 inset 0 -1px @borders;
 
     /* I'm using box-shadow as borders, so I need to compensate
@@ -671,13 +671,13 @@ GtkTreeView.separator:backdrop,
 
 .spinbutton.vertical.entry:insensitive {
     border-color: @insensitive_borders;
-    box-shadow: inset 0 1px @insensitive_borders, 
+    box-shadow: inset 0 1px @insensitive_borders,
                 inset 0 -1px @insensitive_borders;
 }
 
 .spinbutton.vertical.entry:focus {
     border-color: @theme_selected_bg_color;
-    box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1), 
+    box-shadow: inset 1px 2px alpha(@theme_selected_bg_color, 0.1),
                 inset 1px 3px alpha(@theme_selected_bg_color, 0.1),
                 inset -1px -2px alpha(@theme_selected_bg_color, 0.2),
                 inset 0 1px @theme_selected_bg_color,
@@ -1104,7 +1104,7 @@ GtkScrolledWindow.frame:backdrop {
     border-color: @unfocused_borders;
 }
 
-/* avoid double borders when a viewport is 
+/* avoid double borders when a viewport is
  * packed into a GtkScrolledWindow */
 GtkScrolledWindow GtkViewport.frame {
     border-style: none;
@@ -1151,7 +1151,7 @@ GtkColorButton.button {
 .primary-toolbar .button {
     border-image: none;
 
-    /* setting border-style: none; here would override the border-width values 
+    /* setting border-style: none; here would override the border-width values
      * we set in gtk-widget-borders.css to zero.
      */
     border-style: solid;
@@ -1294,7 +1294,7 @@ GtkColorButton.button {
 .inline-toolbar.toolbar GtkToolButton:only-child > .button,
 .inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop,
 .inline-toolbar.toolbar GtkToolButton:only-child > .button:backdrop:insensitive {
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 /* Middle button */
@@ -1684,7 +1684,7 @@ GtkLinkButton.button *:active {
     text-shadow: none;
 }
 
-.button .separator { 
+.button .separator {
     color: shade(@internal_element_color, 1.30);
 }
 
@@ -1869,9 +1869,9 @@ GtkLinkButton.button *:active {
     color:  @button_active_text;
     icon-shadow: 0 1px @button_active_text_shadow;
 
-    border-color: alpha(black, 0.27) 
-                  alpha(black, 0.13) 
-                  alpha(black, 0.13) 
+    border-color: alpha(black, 0.27)
+                  alpha(black, 0.13)
+                  alpha(black, 0.13)
                   alpha(black, 0.13);
 }
 
@@ -1960,7 +1960,7 @@ GtkComboBox.combobox-entry .button:last-child,
 GtkComboBox.combobox-entry .button:hover:last-child,
 GtkComboBox.combobox-entry .button:active:last-child,
 GtkComboBox.combobox-entry .button:hover:active:last-child {
-    box-shadow: inset 1px 0 @inset_dark_color, 
+    box-shadow: inset 1px 0 @inset_dark_color,
                 inset 0 1px @entry_inset,
                 inset 0 2px alpha(@entry_inset, 0.4);
 }
@@ -1969,7 +1969,7 @@ GtkComboBox.combobox-entry .button:first-child,
 GtkComboBox.combobox-entry .button:hover:first-child,
 GtkComboBox.combobox-entry .button:active:first-child,
 GtkComboBox.combobox-entry .button:hover:active:first-child {
-    box-shadow: inset -1px 0 @inset_dark_color, 
+    box-shadow: inset -1px 0 @inset_dark_color,
                 inset 0 1px @entry_inset,
                 inset 0 2px alpha(@entry_inset, 0.4);
 }
@@ -2452,9 +2452,9 @@ GtkCheckButton:selected:focus {
  ********************/
 .toolbar.menubar {
     -GtkToolbar-button-relief: normal;
-    
-    padding: 4px 4px 2px 4px; /* weird padding to compensate border-images 
-                                 and eventual top border presence, 
+
+    padding: 4px 4px 2px 4px; /* weird padding to compensate border-images
+                                 and eventual top border presence,
                                  see selection mode toolbars */
 
 }
@@ -2822,7 +2822,7 @@ GtkOverlay.osd {
     border-style: none;
     background-color: @theme_selected_bg_color;
     background-image: none;
-    border-radius: 0;    
+    border-radius: 0;
 }
 
 /****************************
@@ -3539,9 +3539,9 @@ PanelToplevel,
 PanelWidget,
 PanelAppletFrame,
 PanelApplet {
-    background-color: @os_chrome_bg_color;
+    background-color: @theme_bg_color;
     background-image: none;
-    color: @os_chrome_fg_color;
+    color: @theme_fg_color;
 }
 
 .gnome-panel-menu-bar.menubar,
@@ -3551,7 +3551,7 @@ PanelApplet > GtkMenuBar.menubar {
 
 .gnome-panel-menu-bar.menubar .menuitem *:hover,
 PanelApplet > GtkMenuBar.menubar .menuitem *:hover {
-    text-shadow: 0 1px @os_chrome_bg_color;
+    text-shadow: 0 1px @theme_bg_color;
 }
 
 .gnome-panel-menu-bar.menubar .menu,
@@ -3568,13 +3568,13 @@ PanelApplet > GtkMenuBar.menubar .menu *:hover {
 PanelApplet > GtkMenuBar.menubar .menuitem:hover,
 .gnome-panel-menu-bar .menuitem *:hover,
 PanelApplet > GtkMenuBar.menubar .menuitem *:hover {
-    background-color: @os_chrome_selected_bg_color;
-    color: @os_chrome_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
 
 .gnome-panel-menu-bar .menuitem *:hover,
 PanelApplet > GtkMenuBar.menubar .menuitem *:hover {
-    color: @os_chrome_selected_fg_color;
+    color: @theme_selected_fg_color;
 }
 
 PanelApplet .button:not(:active) {
@@ -3584,7 +3584,7 @@ PanelApplet .button:not(:active) {
 }
 
 WnckPager, WnckTasklist {
-    background-color: @os_chrome_bg_color;
+    background-color: @theme_bg_color;
     background-image: none;
 }
 
@@ -3594,9 +3594,9 @@ NaTrayApplet {
 }
 
 GsmFailWhaleDialog {
-    background-color: @os_chrome_bg_color;
+    background-color: @theme_bg_color;
     background-image: none;
-    color: @os_chrome_fg_color;
+    color: @theme_fg_color;
 }
 
 GsmFailWhaleDialog .button,
@@ -3605,4 +3605,3 @@ GsmFailWhaleDialog .button:active {
     border-color: @borders;
     border-width: 1px;
 }
-
