@@ -1124,7 +1124,7 @@ GtkColorButton.button {
 }
 
 .button {
-    -GtkButton-image-spacing: -2;
+    -GtkButton-image-spacing: 0;
     -GtkButton-interior-focus: true;
     -GtkButton-default-border: 0;
     -GtkButton-inner-border: 3;
@@ -2190,7 +2190,7 @@ GtkTreeMenu .menuitem,
     background-color: @menu_bg_color;
     color: @menu_fg_color;
     padding: 0;
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
     border-color: @menu_border;
 }
@@ -2293,7 +2293,7 @@ GtkTreeMenu .menuitem,
 
 .menuitem.separator {
     color: @menu_separator;
-    padding: 2;
+    padding: 2px;
 
     -GtkMenuItem-horizontal-padding: 0;
 }
